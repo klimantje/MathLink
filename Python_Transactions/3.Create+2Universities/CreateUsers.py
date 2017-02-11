@@ -7,6 +7,22 @@ vu = generate_keypair()
 ucl = generate_keypair()
 
 
+print("Please update passwords.py as follows:",)
+
+
+print("#public keys",)
+print("madscientistpublic ='",madscientist.public_key,"'",sep='')
+print("vupublic = '",vu.public_key,"'",sep='')
+print("uclpublic = '",ucl.public_key,"'",sep='')
+
+print("#private keys",)
+print("madscientistpassword = '",madscientist.private_key,"'",sep='')
+print("vupassword = '",vu.private_key,"'",sep='')
+print("uclpassword = '",ucl.private_key,"'",sep='')
+
+
+
+
 
 
 

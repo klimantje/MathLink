@@ -2,7 +2,7 @@ from bigchaindb_driver import BigchainDB
 from bigchaindb_driver.crypto import generate_keypair
 from time import sleep
 from sys import exit
-from passwords import *
+from CreateUsers import *
 
 
 # connection
@@ -10,9 +10,18 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 
 #public keys
 
+madscientistpublic = '8PAKyo8ytBnB4rfKudknZzBwJ5x38WCHvaCmeZ46DWve'
+vupublic = '2cZLvzcrveLhdDVzjKwA4YWL1x9MiihLMywc7ie5BiSv'
+uclpublic = 'GtnqczFzQDU6SWGWZ4WciivJmtXSUxGE4tG3ukHgpPb5'
+
+# sign with user private key --> fullfilled
+madscientistpassword = '8fnMBkoD5naQaKYMZB8A1JD1Way4b38oTFvoNWCEPgjg'
+vupassword = 'BoQDsXsFMbBt5T7ncj3kojq9cPQdfw9R5ja6z7nPPKBw'
+uclpassword = '9kEHP6ByRU2dWvrGoBGivAd4jcEbRKvUcyKoeXSas7nM'
+
 # asset from previous
-asset_id = '981bca8aef582b007e2e85a6c48a739c6a89796c1f986b0ed2757f33ab2bbb72'
-prev_transaction_id = '892f8d091ec2142546d776a916839810ac643c8d8308d571a60e69e08fb44c81'
+asset_id = 'd84b868bb37aeeba31a61ce9682807319f9e8cd93a5dc54ae4ab31c55e00d3ad'
+prev_transaction_id = '5fc791a7f0eb5dcc5f134afa64b29e006952cbab712e886e59188802e07ee2b2'
 
 transfer_asset = {
     'id': asset_id
@@ -47,7 +56,7 @@ prepared = bdb.transactions.prepare(
 
 # fullfill transfer
 fulfilled_transfer_tx = bdb.transactions.fulfill(
-    prepared,private_keys=[vupassword, uclpassword],
+    prepared,private_keys=uclpassword,
 )
 
 
