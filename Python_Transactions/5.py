@@ -5,7 +5,7 @@ from sys import exit
 
 alice, bob, amit = generate_keypair(), generate_keypair(), generate_keypair()
 
-bdb = BigchainDB('http://10.4.5.2:9984')
+bdb = BigchainDB('http://10.4.4.2:9984')
 
 article_asset = {
     'data': {
@@ -87,3 +87,6 @@ print("Is Bob the new owner 2222?",
 
 print("was alice before ???",
     fulfilled_transfer_tx['inputs'][0]['owners_before'][0] == amit.public_key)
+
+
+print(asset_id)
