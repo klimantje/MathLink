@@ -31,12 +31,12 @@ prepared = bdb.transactions.prepare(
     operation='CREATE',
     signers=madscientist.public_key,
     asset=article,
-    metadata=article_metadata
+    metadata=article_metadata,
 )
 
 # sign with user private key --> fullfilled
 madscientistpassword = madscientist.private_key
-uniamsterdampassword = uniamsterdam.private_key
+vupassword = vu.private_key
 uclpassword = ucl.private_key
 
 fullfilled = bdb.transactions.fulfill(
@@ -51,11 +51,16 @@ sent = bdb.transactions.send(fullfilled)
 
 
 # display results
-print("CREATION Transaction finished ")
+print("CREATION Transaction finished : Article Uploaded from Mad Scientist, review requested to UCL and VU ")
 print("Transaction ID = ",
     txid)
 print("madscientist password :",madscientistpassword)
-print("uniamsterdam password :",uniamsterdampassword)
-print("ucl password :",uclpassword)
+print("VU password :",vupassword)
+print("UCL password :",uclpassword)
+print("Status of transaction : ", bdb.transactions.status(txid))
 
+
+print("madscientist public :",madscientist.public_key)
+print("VU public :",vu.public_key)
+print("UCL public :",ucl.public_key)
 
