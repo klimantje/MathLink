@@ -1,38 +1,30 @@
-from bigchaindb_driver import BigchainDB
-from bigchaindb_driver.crypto import generate_keypair
-from time import sleep
-from sys import exit
+alice, bob = generate_keypair(), generate_keypair()
 
-alice, bob, amit = generate_keypair(), generate_keypair(), generate_keypair()
+bdb = BigchainDB('http://bdb-server:9984')
 
-bdb = BigchainDB('http://10.4.5.2:9984')
-
-article_asset = {
+bicycle_asset = {
     'data': {
-        'article7': {
-            'http': 'http://www.bluetrails.nl/articles/article4.pdf',
-            'author': 'Cedric',
-            'domain': 'Math',
-            'subdomain': 'Trigonometry',
-            'hash': 'IHOIAHOFHRH(($OJJOJKJKLJLHPIHI'
+        'bicycle': {
+            'serial_number': 'abcd1234',
+            'manufacturer': 'bkfab'
         },
     },
 }
 
-article_asset_metadata = {
+bicycle_asset_metadata = {
     'planet': 'earth'
 }
 
 prepared_creation_tx = bdb.transactions.prepare(
     operation='CREATE',
-    signers=amit.public_key,
-    asset=article_asset,
-    metadata=article_asset_metadata
+    signers=alice.public_key,
+    asset=bicycle_asset,
+    metadata=bicycle_asset_metadata
 )
 
 fulfilled_creation_tx = bdb.transactions.fulfill(
     prepared_creation_tx,
-    private_keys=amit.private_key
+    private_keys=alice.private_key
 )
 
 sent_creation_tx = bdb.transactions.send(fulfilled_creation_tx)
@@ -80,23 +72,13 @@ prepared_transfer_tx = bdb.transactions.prepare(
 
 fulfilled_transfer_tx = bdb.transactions.fulfill(
     prepared_transfer_tx,
-    private_keys=amit.private_key,
+    private_keys=alice.private_key,
 )
 
 sent_transfer_tx = bdb.transactions.send(fulfilled_transfer_tx)
 
-print(
+print("Is Bob the owner?",
+    sent_transfer_tx['outputs'][0]['public_keys'][0] == bob.public_key)
 
-)
-print("Transaction 6 - Confirmed",
-    fulfilled_transfer_tx['inputs'][0]['owners_before'][0] == amit.public_key)
-
-print("Asset ID ",
-    asset_id)
-
-print("Transaction ID = ",
-    txid)
-
-print ("status of transaction is ",)
-
-print (bdb.transactions)
+print("Was Alice the previous owner?",
+    fulfilled_transfer_tx['inputs'][0]['owners_before'][0] == alice.public_key)
