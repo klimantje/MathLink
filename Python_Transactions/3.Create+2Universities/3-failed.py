@@ -2,7 +2,7 @@ from bigchaindb_driver import BigchainDB
 from bigchaindb_driver.crypto import generate_keypair
 from time import sleep
 from sys import exit
-from CreateUsers import *
+from passwords import *
 
 
 # connection
@@ -10,14 +10,6 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 
 #public keys
 
-madscientistpublic = '8PAKyo8ytBnB4rfKudknZzBwJ5x38WCHvaCmeZ46DWve'
-vupublic = '2cZLvzcrveLhdDVzjKwA4YWL1x9MiihLMywc7ie5BiSv'
-uclpublic = 'GtnqczFzQDU6SWGWZ4WciivJmtXSUxGE4tG3ukHgpPb5'
-
-# sign with user private key --> fullfilled
-madscientistpassword = '8fnMBkoD5naQaKYMZB8A1JD1Way4b38oTFvoNWCEPgjg'
-vupassword = 'BoQDsXsFMbBt5T7ncj3kojq9cPQdfw9R5ja6z7nPPKBw'
-uclpassword = '9kEHP6ByRU2dWvrGoBGivAd4jcEbRKvUcyKoeXSas7nM'
 
 # asset from previous
 asset_id = 'd84b868bb37aeeba31a61ce9682807319f9e8cd93a5dc54ae4ab31c55e00d3ad'
