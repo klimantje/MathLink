@@ -3,9 +3,11 @@ from bigchaindb_driver.crypto import generate_keypair
 from time import sleep
 from sys import exit
 from passwords import *
+from queryhelper import *
 
 # connection
 bdb = BigchainDB('http://10.4.5.2:9984')
+
 
 
 # asset data
@@ -17,6 +19,8 @@ article = {
             'author': 'madscientist',
             'domain': 'math',
             'subdomain': 'geometry',
+            'publish_date' : '31/12/2016',
+            'title' : 'How to build a nice triangle in 30 secs',
         },
     },
 }
@@ -63,4 +67,16 @@ print("Status of transaction : ", bdb.transactions.status(txid))
 print("madscientist public :",madscientistpublic)
 print("VU public :",vupublic)
 print("UCL public :",uclpublic)
+
+print("Article Title  = ",getTitle(article))
+print("Author         = ",getAuthor(article))
+print("Link           = ",getLink(article))
+print("Date           = ",getDate(article))
+print("Domain         = ",getAuthor(article))
+print("SubDomain      = ",getSubDomain(article))
+
+
+
+
+
 

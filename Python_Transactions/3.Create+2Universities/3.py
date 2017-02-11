@@ -3,7 +3,7 @@ from bigchaindb_driver.crypto import generate_keypair
 from time import sleep
 from sys import exit
 from passwords import *
-
+from queryhelper import *
 
 # connection
 bdb = BigchainDB('http://10.4.5.2:9984')
@@ -11,7 +11,7 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 #public keys
 
 # asset from previous
-asset_id = '981bca8aef582b007e2e85a6c48a739c6a89796c1f986b0ed2757f33ab2bbb72'
+asset_id = '039b49765c900bcf0234c26229ccf24be1a31e2116ce053cf69984515c0071fc'
 prev_transaction_id = '892f8d091ec2142546d776a916839810ac643c8d8308d571a60e69e08fb44c81'
 
 transfer_asset = {
@@ -63,3 +63,10 @@ sent = bdb.transactions.send(fulfilled_transfer_tx)
 print("TRANSFER Transaction finished : 2 votes for article from UCL and VU")
 print("Transaction ID = ",
     txid)
+
+print("Article Title  = ",getTitle(asset_id))
+print("Author         = ",getAuthor(asset_id))
+print("Link           = ",getLink(asset_id))
+print("Date           = ",getDate(asset_id))
+print("Domain         = ",getAuthor(asset_id))
+print("SubDomain      = ",getSubDomain(asset_id))
