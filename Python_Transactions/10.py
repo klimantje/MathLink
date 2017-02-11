@@ -34,6 +34,7 @@ prepared = bdb.transactions.prepare(
 
 # sign with user private key --> fullfilled
 alicepassword = alice.private_key
+bobpassword = bob.private_key
 
 fullfilled = bdb.transactions.fulfill(
     prepared,alicepassword
@@ -50,8 +51,6 @@ sent = bdb.transactions.send(fullfilled)
 print("CREATION Transaction finished ")
 print("Transaction ID = ",
     txid)
+print("alice password :",alicepassword)
+print("bob password :",bobpassword)
 
-
-# display the outputs:
-print("Fullfilment = 1st out",
-      fullfilled['outputs'][0])

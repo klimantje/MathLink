@@ -4,51 +4,65 @@ from time import sleep
 from sys import exit
 
 
+
 # connection
 bdb = BigchainDB('http://10.4.5.2:9984')
 
 # declare users
+alicepassword = '2CpjTxiaAbJK66xPRv7suu6PVZ49UyDnTisoniBMd6uP'
+bobpassword = 'GKuWornrXzR1csgDGPqqRcak4SiZPmTDeoewXgdBik7v'
 bob = generate_keypair()
-alice = generate_keypair()
 
 # asset from previous
-asset_id = '292e267c6bef70acd616618f800e2f14758e00f807f6d8c67412e1d92f7e15'
+asset_id = '5623b9fb0485d5df44aef95938169149cd57e42ddc54651be6b7096e4d8b9200'
+
+transfer_asset = {
+    'id': asset_id
+}
+
 
 # transfer input UNCLEAR UNCLEAR UNCLEAR
 
 
-# prepare transfer
+
+
+output_index = 0
+prevtransaction = bdb.transactions.retrieve(asset_id)
+output = prevtransaction['outputs'][output_index]
+
 transfer_input = {
-    'fulfillment': None,
+    'fulfillment': output['condition']['details'],
     'fulfills': {
-        'output': 0,
-        'txid': asset_id
+        'output': output_index,
+        'txid': prevtransaction['id']
     },
-    'owners_before': alice.public_key
+    'owners_before': output['public_keys']
 }
 
 
+
+# prepare transfer
 prepared = bdb.transactions.prepare(
     operation='TRANSFER',
-    asset=asset_id,
     inputs=transfer_input,
-    recipients=bob.public_key)
+    recipients=bob.public_key,
+    asset=transfer_asset,
+)
 
 
 # sign with user private key --> fullfilled
 
 # fullfill transfer
-alicepassword = alice.private_key
-
-fullfilled = bdb.transactions.fulfill(
-    prepared,alice.privatechain)
+fulfilled_transfer_tx = bdb.transactions.fulfill(
+    prepared,
+    private_keys=alicepassword,)
 
 #at this stage we know the transaction id
-txid = fullfilled['id']
+txid = fulfilled_transfer_tx['id']
 
 # send transfer
 
-sent = bdb.transactions.send(fullfilled)
+sent = bdb.transactions.send(fulfilled_transfer_tx)
 
 # print
 
