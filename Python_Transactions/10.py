@@ -2,14 +2,10 @@ from bigchaindb_driver import BigchainDB
 from bigchaindb_driver.crypto import generate_keypair
 from time import sleep
 from sys import exit
-
+from CreateUsers import *
 
 # connection
 bdb = BigchainDB('http://10.4.5.2:9984')
-
-# declare users
-alice = generate_keypair()
-bob = generate_keypair()
 
 
 # asset data
