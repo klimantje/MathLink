@@ -13,8 +13,8 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 
 
 # asset from previous
-asset_id = '039b49765c900bcf0234c26229ccf24be1a31e2116ce053cf69984515c0071fc'
-prev_transaction_id = '5fc791a7f0eb5dcc5f134afa64b29e006952cbab712e886e59188802e07ee2b2'
+asset_id = '7537d4fb0be1907e676c0a9496c6e84fd3ef90cd0a940b2707948b31e224b793'
+prev_transaction_id = '16ef14e747151e7f4a0860e86c32b71573e936ab588cd33d747865f0b0a560c6'
 
 transfer_asset = {
     'id': asset_id

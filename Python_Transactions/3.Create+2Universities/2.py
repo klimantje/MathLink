@@ -12,7 +12,9 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 
 
 # asset from previous
-asset_id = '039b49765c900bcf0234c26229ccf24be1a31e2116ce053cf69984515c0071fc'
+asset_id = 'f01b1130cfd6c59116224becf1e8aeca45ae865288fae2c66276c3de29ccf433'
+
+
 
 transfer_asset = {
     'id': asset_id
@@ -22,6 +24,7 @@ transfer_asset = {
 output_index = 0
 prevtransaction = bdb.transactions.retrieve(asset_id)
 output = prevtransaction['outputs'][output_index]
+
 
 transfer_input = {
     'fulfillment': output['condition']['details'],
@@ -71,11 +74,4 @@ print("VU password :",vupassword)
 print("UCL password :",uclpassword)
 print("Status of transaction : ", bdb.transactions.status(txid))
 
-
-print("Article Title  = ",getTitle(transfer_asset))
-print("Author         = ",getAuthor(transfer_asset))
-print("Link           = ",getLink(transfer_asset))
-print("Date           = ",getDate(transfer_asset))
-print("Domain         = ",getAuthor(transfer_asset))
-print("SubDomain      = ",getSubDomain(transfer_asset))
 

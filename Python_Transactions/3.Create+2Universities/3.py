@@ -11,8 +11,8 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 #public keys
 
 # asset from previous
-asset_id = '039b49765c900bcf0234c26229ccf24be1a31e2116ce053cf69984515c0071fc'
-prev_transaction_id = '892f8d091ec2142546d776a916839810ac643c8d8308d571a60e69e08fb44c81'
+asset_id = 'f01b1130cfd6c59116224becf1e8aeca45ae865288fae2c66276c3de29ccf433'
+prev_transaction_id = '16ef14e747151e7f4a0860e86c32b71573e936ab588cd33d747865f0b0a560c6'
 
 transfer_asset = {
     'id': asset_id
@@ -64,9 +64,4 @@ print("TRANSFER Transaction finished : 2 votes for article from UCL and VU")
 print("Transaction ID = ",
     txid)
 
-print("Article Title  = ",getTitle(asset_id))
-print("Author         = ",getAuthor(asset_id))
-print("Link           = ",getLink(asset_id))
-print("Date           = ",getDate(asset_id))
-print("Domain         = ",getAuthor(asset_id))
-print("SubDomain      = ",getSubDomain(asset_id))
+
