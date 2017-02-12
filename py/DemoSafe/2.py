@@ -12,7 +12,7 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 
 
 # asset from previous
-asset_id = 'a6e688e3600f7da901d142dc6223c19fa4a98106304c3f45329312c657e1072c'
+asset_id = '5abf802a57c37abefe559ba4b5ae682e902e819e76033359d7a0a2a30865a69d'
 
 
 

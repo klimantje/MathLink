@@ -12,7 +12,7 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 
 
 # asset from previous
-asset_id = '94c9b52a29034339383ce764bddb744bc1a69d3936c4793fa08f0610e49b4759'
+asset_id = 'bd3101aff3bca4e9363ad0aa40a34659a838fa68abdd67d7a1529c1007cfe235'
 
 
 
@@ -27,10 +27,6 @@ output = prevtransaction['outputs'][output_index]
 
 
 article = prevtransaction['asset']
-
-
-prevtransaction['metadata']['status'] = "PENDING_REVIEW"
-
 
 transfer_input = {
     'fulfillment': output['condition']['details'],
@@ -84,6 +80,5 @@ print("Hash           = ",getHash(article))
 print("Date           = ",getDate(article))
 print("Domain         = ",getDomain(article))
 print("SubDomain      = ",getSubDomain(article))
-print("Status Article =",getAssetStatus(prevtransaction))
 
 

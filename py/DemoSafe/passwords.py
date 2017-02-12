@@ -1,8 +1,8 @@
 #public keys
-madscientistpublic ='3d1kwtwCjtgzZ8GRtGgTpihhcS9VioHtVdgA5P9BAKCk'
-vupublic = 'CzVZJ5ULXUohcrWnV7yMvA6Y1nufNSzdG3qRRH2gh9C8'
-uclpublic = '5DouZ2JCfxgUxYZVnCxEJrpUHfQkEe4ovJrinDRmqfQF'
+madscientistpublic ='HHn47xkPXM6gxT5nVrTKnuiQFUocseBQpxmaiEjQHaKq'
+vupublic = '4BTn5YzemyLh6qo4VVCxG5sraMFsUD7CAwj7rQMEZGhZ'
+uclpublic = 'AWiS5TViGwupNBQGHEv1uXMHhg5nLYzyKvHM9dcsSTeU'
 #private keys
-madscientistpassword = '3eL8WzGbtt8crPgJ6X9W5tR3EnxN3m6NLFomuQNjbeB4'
-vupassword = 'HjM1fK3yB4hcKTuJsCtghFs7ZwamndDeveBaqoauEEgg'
-uclpassword = 'EoE9ag14iMW8FbJz2CH5qnFb4XvsX6Nyy9KAY6qJPVhX'
+madscientistpassword = 'GPBEM7C2PMDTpKR9TELHP9Ziy3bZ5KSgEHdwcJCNJ8s8'
+vupassword = '5QxyhCDRfexELaoGp2Y9nw3DvTRWeJTeXmny5iYVJiek'
+uclpassword = 'EkTYq5TCzJVppJCkGwweYN33oAQRw1yY56VB2NtoNkQ3'

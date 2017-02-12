@@ -27,7 +27,7 @@ article = {
 }
 
 article_metadata = {
-    'status': 'UPLOADED'
+    'status': 'NEW'
 }
 
 
@@ -70,7 +70,6 @@ print("Hash           = ",getHash(article))
 print("Date           = ",getDate(article))
 print("Domain         = ",getDomain(article))
 print("SubDomain      = ",getSubDomain(article))
-print("Status Article =",getAssetStatus(fullfilled))
 
 
 

@@ -11,12 +11,15 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 #public keys
 
 # asset from previous
-asset_id = 'a6e688e3600f7da901d142dc6223c19fa4a98106304c3f45329312c657e1072c'
-prev_transaction_id = '027c0447bcb2031e57b848b796d6f9d5e578b5518227e50609a35ea9d83b2f36'
+asset_id = '5abf802a57c37abefe559ba4b5ae682e902e819e76033359d7a0a2a30865a69d'
+prev_transaction_id = '5e016a7a7c5debb7eb6783afa22cb18023e1bb8c8416c8cb4810855b0918e947'
 
 transfer_asset = {
     'id': asset_id
 }
+
+
+
 
 
 output_index = 0
@@ -65,4 +68,5 @@ print("-------------------------------------------------------------",)
 print("Transaction ID = ",
     txid)
 print("Status of transaction : ", bdb.transactions.status(txid))
+
 

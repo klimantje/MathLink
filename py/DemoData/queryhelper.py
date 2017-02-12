@@ -1,9 +1,6 @@
 def getAttribute(asset, name):
     return asset["data"]["article"][name]
 
-def getAssetStatus(transaction):
-    return transaction['metadata']['status']
-
 def getStatus(asset,name):
     return asset["meta"]
 

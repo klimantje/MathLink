@@ -11,13 +11,19 @@ bdb = BigchainDB('http://10.4.5.2:9984')
 #public keys
 
 # asset from previous
-asset_id = 'a6e688e3600f7da901d142dc6223c19fa4a98106304c3f45329312c657e1072c'
-prev_transaction_id = '027c0447bcb2031e57b848b796d6f9d5e578b5518227e50609a35ea9d83b2f36'
+asset_id = '94c9b52a29034339383ce764bddb744bc1a69d3936c4793fa08f0610e49b4759'
+prev_transaction_id = '9696e8a6c64ba557b0a5504708417c0d63f738ed3efabc80d2ade8191560a4d7'
 
 transfer_asset = {
     'id': asset_id
 }
 
+
+
+output_indexoriginal = 0
+creationtx = bdb.transactions.retrieve(asset_id)
+article = creationtx['asset']
+creationtx['metadata']['status'] = "REVIEWED --> PUBLISHED"
 
 output_index = 0
 prevtransaction = bdb.transactions.retrieve(prev_transaction_id)
@@ -65,4 +71,12 @@ print("-------------------------------------------------------------",)
 print("Transaction ID = ",
     txid)
 print("Status of transaction : ", bdb.transactions.status(txid))
-
+print("-------------------------------------------------------------",)
+print("Article Title  = ",getTitle(article))
+print("Author         = ",getAuthor(article))
+print("Link           = ",getLink(article))
+print("Hash           = ",getHash(article))
+print("Date           = ",getDate(article))
+print("Domain         = ",getDomain(article))
+print("SubDomain      = ",getSubDomain(article))
+print("Status Article =",getAssetStatus(creationtx))
