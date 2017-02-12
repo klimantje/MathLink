@@ -1,0 +1,8 @@
+#public keys
+madscientistpublic ='3d1kwtwCjtgzZ8GRtGgTpihhcS9VioHtVdgA5P9BAKCk'
+vupublic = 'CzVZJ5ULXUohcrWnV7yMvA6Y1nufNSzdG3qRRH2gh9C8'
+uclpublic = '5DouZ2JCfxgUxYZVnCxEJrpUHfQkEe4ovJrinDRmqfQF'
+#private keys
+madscientistpassword = '3eL8WzGbtt8crPgJ6X9W5tR3EnxN3m6NLFomuQNjbeB4'
+vupassword = 'HjM1fK3yB4hcKTuJsCtghFs7ZwamndDeveBaqoauEEgg'
+uclpassword = 'EoE9ag14iMW8FbJz2CH5qnFb4XvsX6Nyy9KAY6qJPVhX'
